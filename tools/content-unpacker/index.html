@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Content Unpacker for Stardew Valley</title>
+	<meta name="description" content="Upload a zip of the Stardew Valley Content folder and download it back with every .xnb file unpacked. Runs entirely in the browser.">
+	<link rel="stylesheet" href="../../css/theme.css">
+	<link rel="stylesheet" href="css/unpacker.css">
+</head>
+<body>
+	<main>
+		<a class="back" href="../../">All tools</a>
+		<header>
+			<h1>Unpack the Stardew Valley Content folder</h1>
+			<p class="lede">Zip the <code>Content</code> folder, drop it here, and get a zip back with every <code>.xnb</code> turned into PNG, JSON and the rest. Everything runs in the browser. Nothing leaves the computer.</p>
+		</header>
+
+		<section id="pick" aria-labelledby="pick-title">
+			<h2 id="pick-title" class="visually-hidden">Choose a zip</h2>
+			<label id="drop" for="zipInput" tabindex="0">
+				<span class="drop-main">Drop a .zip here</span>
+				<span class="drop-sub">or click to choose a file</span>
+				<span id="fileInfo" class="file-info" hidden></span>
+			</label>
+			<input id="zipInput" type="file" accept=".zip,application/zip" class="visually-hidden">
+		</section>
+
+		<section id="options" aria-labelledby="opt-title" hidden>
+			<h2 id="opt-title">Options</h2>
+			<fieldset>
+				<legend>Output format</legend>
+				<label class="choice"><input type="radio" name="format" value="standard" checked>
+					<span><strong>Header + content</strong> Each .xnb becomes a .json header plus its PNG, TBIN or XML. Can be packed back into .xnb.</span></label>
+				<label class="choice"><input type="radio" name="format" value="content">
+					<span><strong>Content only</strong> Just the PNG, JSON data or map. No header files, so it can't be repacked.</span></label>
+				<label class="choice"><input type="radio" name="format" value="yaml">
+					<span><strong>YAML headers</strong> Same as the first option, with YAML headers that XnbExtract can read.</span></label>
+			</fieldset>
+			<label class="choice single"><input type="checkbox" id="copyOthers">
+				<span><strong>Also copy files that aren't .xnb</strong> Audio banks and other loose files. Makes the result much larger and uses more memory.</span></label>
+			<div class="actions">
+				<button id="start" type="button" class="primary">Unpack</button>
+			</div>
+		</section>
+
+		<section id="working" aria-live="polite" hidden>
+			<h2 id="work-title">Unpacking</h2>
+			<div id="field" class="field" role="progressbar" aria-labelledby="work-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+			<p id="status" class="status"></p>
+			<p id="current" class="current"></p>
+			<div class="actions"><button id="cancel" type="button">Cancel</button></div>
+		</section>
+
+		<section id="result" aria-live="polite" hidden>
+			<h2>Done</h2>
+			<p id="summary" class="status"></p>
+			<div class="actions">
+				<a id="download" class="button primary" href="#">Download</a>
+				<button id="again" type="button">Unpack another zip</button>
+			</div>
+			<details id="errorsBox" hidden>
+				<summary id="errorsTitle"></summary>
+				<pre id="errorsList"></pre>
+			</details>
+		</section>
+
+		<p id="fatal" class="fatal" role="alert" hidden></p>
+	</main>
+
+	<footer>
+		<p>Built on <a href="https://github.com/lybell-art/xnb-js">xnb.js</a> by Lybell (LGPL-3.0), which descends from LeonBlade's xnbcli. Zip handling by <a href="https://stuk.github.io/jszip/">JSZip</a>. Not affiliated with ConcernedApe.</p>
+	</footer>
+
+	<script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* Layout for the tools index page. Colours live in /css/theme.css. */
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main {
+	max-width: 56rem;
+	margin: 0 auto;
+	padding: 3rem 1.25rem 1rem;
+}
+
+h1 {
+	font: 700 clamp(1.8rem, 5vw, 2.6rem)/1.15 Rockwell, "Roboto Slab", "Rockwell Nova", Cambria, Georgia, serif;
+	margin: 0 0 1rem;
+	letter-spacing: -0.01em;
+}
+
+.lede { margin: 0 0 2.5rem; max-width: 60ch; }
+
+.cards {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+	gap: 1rem;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	height: 100%;
+	padding: 1.25rem;
+	border: 1px solid;
+	border-radius: 6px;
+	text-decoration: none;
+	transition: border-color 0.15s;
+}
+.card:focus-visible { outline: 3px solid; outline-offset: 3px; }
+.card-title { font: 700 1.2rem/1.3 Rockwell, "Roboto Slab", Cambria, Georgia, serif; }
+.card-text { font-size: 0.95rem; }
+
+footer { max-width: 56rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; font-size: 0.85rem; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

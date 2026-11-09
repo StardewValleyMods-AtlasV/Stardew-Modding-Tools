@@ -1,0 +1,67 @@
+/* 
+   Shared theme. Every colour on every page lives in this file.
+   Page stylesheets only do layout (sizes, spacing, borders' width/style).
+   Dark is the default, light follows the system setting.
+*/
+
+:root {
+	color-scheme: dark light;
+
+	/* The three core colours */
+	--bg: #121212;
+	--raised: #232323;
+	--text: #c1c1c1;
+
+	/* Derived greys, used for secondary text, outlines and hover states */
+	--muted: #8e8e8e;
+	--border: #3a3a3a;
+	--hover: #2e2e2e;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg: #c1c1c1;
+		--raised: #dcdcdc;
+		--text: #121212;
+
+		--muted: #4a4a4a;
+		--border: #9a9a9a;
+		--hover: #d0d0d0;
+	}
+}
+
+/* Base */
+* { border-color: var(--border); outline-color: var(--text); }
+body { background: var(--bg); color: var(--text); }
+a { color: var(--text); }
+::selection { background: var(--text); color: var(--bg); }
+input { accent-color: var(--text); }
+code { background: var(--raised); color: var(--text); }
+.lede, footer, .muted { color: var(--muted); }
+
+/* Index page */
+.card { background: var(--raised); color: var(--text); }
+.card:hover { background: var(--hover); border-color: var(--text); }
+.card-text { color: var(--muted); }
+.back { color: var(--muted); }
+.back:hover { color: var(--text); }
+
+/* Buttons: the primary button is the inverse of the page */
+button, .button { background: transparent; color: var(--text); border-color: var(--text); }
+button:hover, .button:hover { background: var(--hover); }
+.primary { background: var(--text); color: var(--bg); }
+.primary:hover { background: var(--muted); color: var(--bg); }
+
+/* Content unpacker */
+#drop { background: var(--raised); border-color: var(--text); }
+#drop:hover, #drop.over { background: var(--hover); }
+.drop-sub { color: var(--muted); }
+.file-info { color: var(--text); }
+.choice { background: var(--raised); color: var(--muted); }
+.choice strong { color: var(--text); }
+.choice:has(input:checked) { border-color: var(--text); }
+.field i { background: var(--border); }
+.field i.on { background: var(--text); }
+.current { color: var(--muted); }
+details { background: var(--raised); }
+.fatal { background: var(--text); color: var(--bg); border-color: var(--text); }
