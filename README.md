@@ -25,4 +25,5 @@ Things to know
 
 -xnb.js is LGPL-3.0-or-later
 -JSZip is MIT/GPLv3
+-Open Sans (Latin subset, converted to WOFF, in `fonts/`) is SIL Open Font License 1.1. Its copyright line and license are in `fonts/OFL.txt` and must stay with the font files.
 Their license texts are in `licenses/`.

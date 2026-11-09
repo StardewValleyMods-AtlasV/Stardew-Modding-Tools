@@ -4,7 +4,7 @@
 
 body {
 	margin: 0;
-	font: 16px/1.55 system-ui, -apple-system, "Open Sans", "Segoe UI", sans-serif;
+	font: 16px/1.55 "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 main {
@@ -21,14 +21,14 @@ main {
 }
 
 h1 {
-	font: 700 clamp(1.8rem, 5vw, 2.6rem)/1.15 "Open Sans", Rockwell, "Roboto Slab", "Rockwell Nova", Cambria, Georgia, serif;
+	font: 700 clamp(1.8rem, 5vw, 2.6rem)/1.15 "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 	margin: 0 0 1rem;
 	letter-spacing: -0.01em;
 	max-width: 20ch;
 }
 
 h2 {
-	font: 700 1.15rem/1.3 "Open Sans", Rockwell, "Roboto Slab", Cambria, Georgia, serif;
+	font: 700 1.15rem/1.3 "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 	margin: 0 0 0.75rem;
 }
 
@@ -58,7 +58,7 @@ section { margin-bottom: 2rem; }
 }
 #drop:hover, #drop.over { border-style: solid; }
 #drop:focus-visible, #zipInput:focus-visible + label { outline: 3px solid; outline-offset: 3px; }
-.drop-main { font: 700 1.4rem/1.2 "Open Sans", Rockwell, "Roboto Slab", Cambria, Georgia, serif; }
+.drop-main { font: 700 1.4rem/1.2 "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
 .file-info { margin-top: 0.75rem; font-weight: 600; word-break: break-all; }
 
 /* Options */
